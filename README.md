@@ -476,3 +476,5 @@ Now we simply have to add the custom field attributes to Snipcart's buy button:
 ```
 ## Conclusion
 I had a lot of fun writing this demo. I had worked with angular 8 a couple of years ago, and was a bit scared to go back to it, afraid their would be a lot of boilerplate code. However, I became pleasantly surprised in using angular opinionated architecture, as I found it helped me to create a more modular app. 
+
+En savoir plus: https://guide-angular.wishtack.io/

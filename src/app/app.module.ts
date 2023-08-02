@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
@@ -13,11 +13,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 
-import { ProductsComponent } from './products/products.component';
-import { ProductComponent } from './product/product.component';
-import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-// import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
+import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
+import { TutorialListComponent } from './components/tutorial-list/tutorial-list.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ProductsComponent,
     ProductComponent,
     ProductPageComponent,
-    // NavbarComponent,
+    NavbarComponent,
+    NavbarComponent,
+    AddTutorialComponent,
+    TutorialDetailsComponent,
+    TutorialListComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatChipsModule,
     MatIconModule,
     MatSelectModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../core/product';
+// import { Product } from '../core/product';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../product.service';
-import { Flavor } from '../core/flavor';
-import { Size } from '../core/size';
-import { SelectedProductAttributes } from '../core/selectedProductAttributes';
+import { ProductService } from 'src/app/services/product.service';
+// import { Flavor } from '../core/flavor';
+// import { Size } from '../core/size';
+// import { SelectedProductAttributes } from '../core/selectedProductAttributes';
 
 @Component({
   selector: 'app-product-page',
