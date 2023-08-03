@@ -26,8 +26,9 @@
           [(ngModel)]="product.imageUrls"
           name="imageUrls"
         />
-
-        
+        <ngx-mat-file-input [ngModel]="product.imageUrls" [multiple]="true">
+          <mat-icon ngxMatFileInputIcon>folder</mat-icon>
+        </ngx-mat-file-input>
       </div>
 
       <div class="form-group">

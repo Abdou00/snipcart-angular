@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
@@ -55,7 +56,8 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMatFileInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
