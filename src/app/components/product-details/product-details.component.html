@@ -69,7 +69,10 @@
 <div *ngIf="viewMode; else editable">
     <div *ngIf="currentProduct.id">
         <h4>{{currentProduct.name }}</h4>
+        <p>{{ currentProduct.imageUrls }}</p>
         <p>{{ currentProduct.price }}</p>
+        <p>{{ currentProduct.flavors }}</p>
+        <p>{{ currentProduct.sizes }}</p>
         <p>Status: {{ currentProduct.published ? 'Published' : 'Pending' }}</p>
 
         <button class="badge badge-warning" routerLink="/products/{{ currentProduct.id }}">
@@ -89,26 +92,60 @@
         <h4>Update</h4>
         <form action="">
             <div class="form-group">
-                <label for="name">Title</label>
+                <label for="name">Name</label>
                 <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    [(ngModel)]="currentProduct.name"
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="price">Description</label>
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  required
+                  [(ngModel)]="currentProduct.name"
+                  name="name"
+                />
+              </div>
+        
+              <div class="form-group">
+                <label for="imageUrls">Image</label>
                 <input
-                    type="text"
-                    class="form-control"
-                    id="price"
-                    name="price"
-                    [(ngModel)]="currentProduct.price"
-                >
-            </div>
+                  class="form-control"
+                  id="imageUrls"
+                  required
+                  [(ngModel)]="currentProduct.imageUrls"
+                  name="imageUrls"
+                />
+              </div>
+        
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input
+                  class="form-control"
+                  id="price"
+                  required
+                  [(ngModel)]="currentProduct.price"
+                  name="price"
+                />
+              </div>
+        
+              <div class="form-group">
+                <label for="flavors">Flavor</label>
+                <input
+                  class="form-control"
+                  id="flavors"
+                  required
+                  [(ngModel)]="currentProduct.flavors"
+                  name="flavors"
+                />
+              </div>
+        
+              <div class="form-group">
+                <label for="sizes">Size</label>
+                <input
+                  class="form-control"
+                  id="sizes"
+                  required
+                  [(ngModel)]="currentProduct.sizes"
+                  name="sizes"
+                />
+              </div>
 
             <div class="form-group">
                 <label>Status:</label>

@@ -15,11 +15,12 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule} from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
@@ -52,6 +53,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatSelectModule,
     MatToolbarModule,
+    MatTableModule,
     HttpClientModule,
     FormsModule
   ],

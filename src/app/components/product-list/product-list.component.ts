@@ -1,30 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// // import { Product } from '../core/product';
-// import { ProductService } from 'src/app/services/product.service';
-
-// @Component({
-//   selector: 'app-products',
-//   templateUrl: './products.component.html',
-//   styleUrls: ['./products.component.scss']
-// })
-// export class ProductsComponent implements OnInit {
-//   // On remplace la valeur des produits par un tableau vide
-//   products: Product[] = [];
-
-//   // Injection du service
-//   constructor(private productService: ProductService) {}
-
-//   /**
-//    * Récupère la liste des produits
-//    */
-//   getProducts(): void {
-//     this.products = this.productService.getProducts();
-//   }
-
-//   ngOnInit() {
-//     this.getProducts();
-//   }
-// }
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
@@ -39,6 +12,8 @@ export class ProductListComponent implements OnInit {
   currentProduct: Product = {};
   currentIndex = -1;
   name = '';
+  dataSource: any;
+  displayedColumns: string[] = ['position', 'name', 'image', 'price', 'flavor', 'size'];
   
   constructor(private productService: ProductService) { }
 
@@ -50,6 +25,7 @@ export class ProductListComponent implements OnInit {
     this.productService.getAll().subscribe({
       next: (data) => {
         this.products = data;
+        this.dataSource = this.products;
         console.log(data);
       },
       error: (err) => console.error(err)

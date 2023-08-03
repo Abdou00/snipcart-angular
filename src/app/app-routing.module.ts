@@ -10,14 +10,14 @@ import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.com
 
 const routes: Routes = [
   // {path: "product/:id", component: ProductPageComponent},
-  // {path: "**", component: HomepageComponent},
-  {path: "", redirectTo: 'tutorials', pathMatch: 'full'}, // pathMatch mis à valeur 'full permet de déterminer que ce cas doit être exécuté que si le path(chemein) est complètement vide(soit '/' ou '')
+  // {path: "", redirectTo: 'tutorials', pathMatch: 'full'}, // pathMatch mis à valeur 'full permet de déterminer que ce cas doit être exécuté que si le path(chemein) est complètement vide(soit '/' ou '')
   {path: "tutorials", component: TutorialListComponent},
   {path: "tutorials/:id", component: TutorialDetailsComponent},
   {path: "add", component: AddTutorialComponent},
   {path: "products", component: ProductListComponent},
   {path: "products/:id", component: ProductDetailsComponent},
-  {path: "products/add", component: AddProductComponent}
+  {path: "add-product", component: AddProductComponent},
+  {path: "**", component: HomepageComponent}
 ];
 
 @NgModule({

@@ -162,6 +162,7 @@ export class ProductDetailsComponent implements OnInit {
       next: (response) => {
         console.log(response);
         this.message = response.message ? response.message : 'This product was updated successfully!'
+        this.router.navigate(['/products']);
       },
       error: (err) => console.error(err)
     });
