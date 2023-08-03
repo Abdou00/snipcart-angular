@@ -1,21 +1,24 @@
+/**
+ * Décrit comment les parties de l'application s'emboîtent. Chaque application a au moins un module Angular, le module racine que vous démarrez pour lancer l'application.
+ */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule} from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
-import { ProductsComponent } from './components/products/products.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductPageComponent } from './components/product-page/product-page.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
@@ -29,9 +32,9 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomepageComponent,
-    ProductsComponent,
-    ProductComponent,
-    ProductPageComponent,
+    ProductListComponent,
+    ProductDetailsComponent,
+    AddProductComponent,
     NavbarComponent,
     NavbarComponent,
     AddTutorialComponent,

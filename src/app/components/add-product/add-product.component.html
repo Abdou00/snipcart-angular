@@ -1,0 +1,72 @@
+<!-- <mat-card class="product-card" [routerLink]="'product/' + product?.id">
+  <mat-card-name>{{ product?.name }}</mat-card-name>
+  <img mat-card-image [src]="imageUrl" />
+</mat-card> -->
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="product.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrls">Image</label>
+        <input
+          class="form-control"
+          id="imageUrls"
+          required
+          [(ngModel)]="product.imageUrls"
+          name="imageUrls"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="product.price"
+          name="price"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="flavors">Flavor</label>
+        <input
+          class="form-control"
+          id="flavors"
+          required
+          [(ngModel)]="product.flavors"
+          name="flavors"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sizes">Size</label>
+        <input
+          class="form-control"
+          id="sizes"
+          required
+          [(ngModel)]="product.sizes"
+          name="sizes"
+        />
+      </div>
+
+      <button (click)="saveProduct()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Product was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newProduct()">Add</button>
+    </div>
+  </div>
+</div>

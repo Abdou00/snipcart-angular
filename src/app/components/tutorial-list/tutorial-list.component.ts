@@ -12,7 +12,7 @@ export class TutorialListComponent implements OnInit {
   currentTutorial: Tutorial = {};
   currentIndex = -1;
   title = '';
-
+  
   constructor(private tutorialService: TutorialService) { }
 
   ngOnInit(): void {

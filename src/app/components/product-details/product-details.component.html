@@ -1,0 +1,154 @@
+<!-- <mat-card class="product-page-card">
+    <mat-card-name
+        class="product-page-card-name"
+        fxLayout="row"
+        fxAlign="center"
+    >{{product?.name}}</mat-card-name>
+
+    <img mat-card-image [src]="imageUrl">
+
+    <mat-card-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Size</mat-label>
+            <mat-select
+                (selectionChange)="
+                    updateSelectedProductAttributes(
+                        this.selectedAttributes?.flavor,
+                        $event.value
+                    )
+                "
+                required
+            >
+                <mat-option *ngFor="let size of product?.sizes" [value]="size">
+                    {{size}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h4>Select your flavor:</h4>
+
+        <mat-chip-list aria-label="flavor selection">
+            <mat-chip
+                class="chip"
+                    *ngFor="let flavor of product?.flavors"
+                    [style.background-color]="flavor.color"
+                    (click)="
+                        updateSelectedProductAttributes(
+                            flavor,
+                            this.selectedAttributes?.size
+                        )
+                    "
+                >
+                {{flavor.name}}
+            </mat-chip>
+        </mat-chip-list>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="center">
+        <button
+            mat-raised-button
+            color="primary"
+            class="snipcart-add-item"
+            [attr.data-item-id]="product?.id"
+            [attr.data-item-price]="product?.price"
+            [attr.data-item-url]="'/api/products/' + product?.id"
+            [attr.data-item-image]="imageUrl"
+            [attr.data-item-name]="product?.name"
+            attr.data-item-custom1-name="Flavor"
+            [attr.data-item-custom1-options]="flavorOptions"
+            [attr.data-item-custom1-value]="this.selectedAttributes?.flavor?.name"
+            attr.data-item-custom2-name="Size"
+            [attr.data-item-custom2-options]="sizeOptions"
+            [attr.data-item-custom2-value]="this.selectedAttributes?.size"
+        >
+            Add to cart
+        </button>
+    </mat-card-actions>
+</mat-card> -->
+
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentProduct.id">
+        <h4>{{currentProduct.name }}</h4>
+        <p>{{ currentProduct.price }}</p>
+        <p>Status: {{ currentProduct.published ? 'Published' : 'Pending' }}</p>
+
+        <button class="badge badge-warning" routerLink="/products/{{ currentProduct.id }}">
+            Edit
+        </button>
+    </div>
+
+    <div *ngIf="!currentProduct">
+        <p>Please click on product...</p>
+    </div>
+</div>
+<!--
+    ng-template est utilisé pour définir un contenu qui ne sera rendu immédiatement, mais qui pourra être utilisé plus tard comme modèle de rendu.
+-->
+<ng-template #editable>
+    <div *ngIf="currentProduct.id" class="edit-form">
+        <h4>Update</h4>
+        <form action="">
+            <div class="form-group">
+                <label for="name">Title</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    [(ngModel)]="currentProduct.name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="price">Description</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    name="price"
+                    [(ngModel)]="currentProduct.price"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Status:</label>
+                {{ currentProduct.published ? 'Published' : 'Pending' }}
+            </div>
+        </form>
+
+        <button
+            *ngIf="currentProduct.published"
+            class="badge badge-primary mr-2"
+            (click)="updateProductPublished(false)"
+        >
+            UnPublish
+        </button>
+
+        <button
+            *ngIf="!currentProduct.published"
+            class="badge badge-primary mr-2"
+            (click)="updateProductPublished(true)"
+        >
+            Publish
+        </button>
+
+        <button
+            class="badge badge-warning mr-2"
+            (click)="updateProduct()"
+        >
+            Update
+        </button>
+
+        <button
+            class="badge badge-danger mb-2"
+            (click)="deleteProduct()"
+        >
+            Delete
+        </button>
+
+        <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentProduct.id">
+        <p>Cannot access this product...</p>
+    </div>
+</ng-template>
